@@ -1,11 +1,16 @@
 
-<div class="customers view">
+<div class="orders view">
     <div class="container">
         <header>
             <h3>Orders</h3>
         </header>
-        <div>
-            Orders view
+        <div class="row">
+           <div class="span12" data-ng-repeat="customer in customers | orderBy:'lastName'">
+                <div class="indent">
+                    <h4 class=""><a href="#/customerOrders/{{customer.id}}">{{customer.firstName + ' ' + customer.lastName}}</a></h4>
+                    <div data-ng-include="'views/ordersTable.html'"></div>
+                </div>
+           </div>
         </div>
     </div>
 </div>
