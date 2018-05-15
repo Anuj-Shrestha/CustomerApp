@@ -1,12 +1,9 @@
-
 body {
     padding: 65px;
 }
 
 .view {
-    left: 60px;
     position: relative;
-    opacity: 0.0;
 }
 
 .card {
