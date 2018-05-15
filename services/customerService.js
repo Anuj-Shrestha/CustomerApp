@@ -5,6 +5,16 @@ app.service('customerService', function () {
         return customers;
     };
 
+    this.insertCustomer = function (firstName, lastName, city) {
+        var topID = customers.length + 1;
+        customers.push({
+            id: topID,
+            firstName: firstName,
+            lastName: lastName,
+            city: city
+        });
+    };
+
     var customers = [
         {
             id: 1, firstName: 'Lee', lastName: 'Carroll', address: '1234 Anywhere St.', city: 'Phoenix',
