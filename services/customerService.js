@@ -15,6 +15,10 @@ app.service('customerService', function () {
         });
     };
 
+    this.getCustomerById = function (id) {
+        return customers.find(customer => customer.id === id);
+    }
+
     var customers = [
         {
             id: 1, firstName: 'Lee', lastName: 'Carroll', address: '1234 Anywhere St.', city: 'Phoenix',

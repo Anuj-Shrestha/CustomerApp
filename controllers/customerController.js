@@ -1,8 +1,8 @@
 
 
-app.controller('CustomerController', function($scope, customerService) {
+app.controller('CustomerController', function ($scope, customerService) {
     $scope.customers = customerService.getCustomers();
-    
+
     $scope.insertCustomer = function () {
         var firstName = $scope.newCustomer.firstName;
         var lastName = $scope.newCustomer.lastName;
@@ -29,7 +29,7 @@ app.controller('OrdersController', function ($scope, customerService) {
     $scope.customers = customerService.getCustomers();
 });
 
-app.controller('OrderChildController', function($scope) {
+app.controller('OrderChildController', function ($scope) {
     $scope.orderby = 'product';
     $scope.reverse = false;
     $scope.ordersTotal = 0.00;
@@ -49,5 +49,19 @@ app.controller('OrderChildController', function($scope) {
             $scope.reverse = !$scope.reverse;
         }
         $scope.orderby = orderby;
+    }
+});
+
+app.controller('CustomerOrdersController', function ($scope, $routeParams, customerService) {
+    $scope.customer = {};
+    $scope.ordersTotal = 0.00;
+    
+    init();
+
+    function init() {
+        var customerId = $routeParams.customerId ? parseInt($routeParams.customerId) : 0;
+
+        if (customerId > 0)
+            $scope.customer = customerService.getCustomerById(customerId);
     }
 });
