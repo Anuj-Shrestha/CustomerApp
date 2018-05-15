@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html>
-<script src="./node_modules/angular/angular.min.js"></script>
+
+<head>
+    <title>Customer Manager</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" />
+</head>
+
 <body>
+    <div class="navbar navbar-fixed-top" data-ng-app="customerApp">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand " href="#/">
+                    <img src="assets/images/people.png" alt="logo"> Customer Manager
+                </a>
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="#/customers">Customers</a>
+                    </li>
+                    <li>
+                        <a href="#/orders">Orders</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div ng-view></div>
+    </div>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./angular-route.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
 
-Hello Customers
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
+    <!--Routes-->
+    <script src="./app.js"></script>
+    <script src="./controllers/controllers.js"></script>
+    <script src="./services/customerService.js"></script>
 </body>
+
 </html>
