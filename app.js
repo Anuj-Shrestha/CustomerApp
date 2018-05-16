@@ -4,6 +4,11 @@ var app = angular.module('customerApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
     $routeProvider
+        .when('/todos',
+            {
+                controller: 'TodosController',
+                templateUrl: 'views/todo.html'
+            })
         .when('/customers',
             {
                 controller: 'CustomerController',
