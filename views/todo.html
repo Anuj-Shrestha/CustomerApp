@@ -1,5 +1,18 @@
-<div>
-    <ul data-ng-repeat="todo in todos">
-        <li>{{todo.task}}</li>
-    </ul>
+<div class="view">
+    <div class="container">
+        <header>
+            <h3>Todo List</h3>
+        </header>
+        <div class="row">
+            <form name="myForm">
+                <div class="span12" data-ng-repeat="todo in todos | orderBy:'isCompleted'">
+                    <div class="checkbox">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-ng-model="todo.isCompleted"> {{todo.task}}
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
