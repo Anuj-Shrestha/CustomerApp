@@ -15,7 +15,7 @@ body {
 }
 
 .cardHeader {
-    background-color: #006dcc;
+    background-color: #2e7d32;
     font-size:14pt;
     color:white;
     padding:5px;
@@ -54,7 +54,7 @@ body {
 }
 
 .ordersTable tr:first-child th {
-    background-color: #006dcc;
+    background-color: #2e7d32;
     color: #fff;
     font-weight: bold;
 }

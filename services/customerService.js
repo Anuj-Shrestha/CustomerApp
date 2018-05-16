@@ -19,6 +19,11 @@ app.service('customerService', function () {
         return customers.find(customer => customer.id === id);
     }
 
+    this.deleteCustomer = function (id) {
+        var indexOfCustomer = customers.indexOf(this.getCustomerById(id));
+        customers.splice(indexOfCustomer, 1);
+    }
+
     var customers = [
         {
             id: 1, firstName: 'Lee', lastName: 'Carroll', address: '1234 Anywhere St.', city: 'Phoenix',
