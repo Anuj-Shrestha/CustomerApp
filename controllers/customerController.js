@@ -13,6 +13,10 @@ app.controller('CustomerController', function ($scope, customerService) {
         $scope.newCustomer.city = '';
     };
 
+    $scope.deleteCustomer = function (id) {
+        customerService.deleteCustomer(id);
+    }
+
 });
 
 app.controller('NavbarController', function ($scope, $location) {
