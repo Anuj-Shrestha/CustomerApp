@@ -12,4 +12,8 @@ app.controller('TodosController', function ($scope, todoService) {
     $scope.deleteTodo = function(id) {
         todoService.deleteTodo(id);
     }
+
+    $scope.showEditTodoForm = function(id) {
+        todoService.showEditTodoForm(id);
+    }
 });

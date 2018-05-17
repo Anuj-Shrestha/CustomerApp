@@ -13,15 +13,20 @@
         </div>
         <br/>
         <div class="row">
-            <form name="myForm">
-                <div class="span12" data-ng-repeat="todo in todos | orderBy:['isCompleted', '-id']">
-                    <div class="checkbox">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" data-ng-model="todo.isCompleted"> {{todo.task}} <button class="close btn-padding" data-ng-click="deleteTodo('todo.id')">&times;</button>
-                        </label>
-                    </div>
+            <div class="span12" data-ng-repeat="todo in todos | orderBy:['isCompleted', '-id']">
+                <form data-ng-submit="showEditTodoForm(todo.id)" class="todo-edit-form" data-ng-hide="!todo.showEditForm">
+                    <input data-ng-model="todo.task" type="text" placeholder="New Task">
+                    <button id="submitTodo" class="btn btn-success" type="submit" data-ng-disabled="!todo.task">Save</button>
+                </form>
+                <div class="checkbox" data-ng-hide="todo.showEditForm">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" data-ng-model="todo.isCompleted"> {{todo.task}}
+                        <button class="close btn-padding" data-ng-click="deleteTodo(todo.id)"><span class="cross-icon">&times;</span></button>
+                        <button class="btn btn-link" data-ng-click="showEditTodoForm(todo.id)">Edit</button>
+                        
+                    </label>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
