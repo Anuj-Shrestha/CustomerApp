@@ -69,7 +69,3 @@ app.controller('CustomerOrdersController', function ($scope, $routeParams, custo
             $scope.customer = customerService.getCustomerById(customerId);
     }
 });
-
-app.controller('TodosController', function ($scope, todoService) {
-    $scope.todos = todoService.getTodos();
-});

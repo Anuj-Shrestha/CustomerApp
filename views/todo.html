@@ -4,8 +4,17 @@
             <h3>Todo List</h3>
         </header>
         <div class="row">
+            <form data-ng-submit="insertTodo()" class="span6 todo-form">
+                Add new task:
+                <br />
+                <input data-ng-model="newTodo.task" type="text" placeholder="New Task">
+                <button id="submitTodo" class="btn btn-success" type="submit" data-ng-disabled="!newTodo.task">Add Todo</button>
+            </form>
+        </div>
+        <br/>
+        <div class="row">
             <form name="myForm">
-                <div class="span12" data-ng-repeat="todo in todos | orderBy:'isCompleted'">
+                <div class="span12" data-ng-repeat="todo in todos | orderBy:['isCompleted', '-id']">
                     <div class="checkbox">
                         <label class="checkbox-inline">
                             <input type="checkbox" data-ng-model="todo.isCompleted"> {{todo.task}}

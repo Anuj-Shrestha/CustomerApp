@@ -4,6 +4,13 @@ app.service('todoService', function () {
     this.getTodos = function () {
         return todos;
     }
+
+    this.insertTodo = function (newTask) {
+        var topId = todos.length + 1;
+        var newTodo = {id: topId, task: newTask, isCompleted: false};
+        todos.push(newTodo);
+    }
+
     var todos = [
         { id: 1, task: 'Learn Angular', isCompleted: false },
         { id: 2, task: 'Go Shoping', isCompleted: false },
