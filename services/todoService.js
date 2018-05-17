@@ -11,6 +11,15 @@ app.service('todoService', function () {
         todos.push(newTodo);
     }
 
+    this.getTodoById = function(id) {
+        return todos.find(todo => todo.id === id);
+    }
+
+    this.deleteTodo = function (id) {
+        var indexOfTodo = todos.indexOf(this.getTodoById(id));
+        todos.splice(indexOfTodo, 1);
+    }
+
     var todos = [
         { id: 1, task: 'Learn Angular', isCompleted: false },
         { id: 2, task: 'Go Shoping', isCompleted: false },

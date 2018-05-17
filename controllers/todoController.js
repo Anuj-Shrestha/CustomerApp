@@ -8,4 +8,8 @@ app.controller('TodosController', function ($scope, todoService) {
         todoService.insertTodo(newTask);
         $scope.newTodo.task = '';
     }
+
+    $scope.deleteTodo = function(id) {
+        todoService.deleteTodo(id);
+    }
 });
