@@ -3,9 +3,10 @@
 
 <head>
     <title>Customer Manager</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,13 +23,16 @@
                     <li data-ng-class="{'active':getClass('/orders')}">
                         <a href="#/orders">Orders</a>
                     </li>
+                    <li data-ng-class="{'active':getClass('/todos')}">
+                        <a href="#/todos">Todos</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div ng-view></div>
-    
+
     <script src="./node_modules/angular/angular.js"></script>
     <script src="./Scripts/angular-route.js"></script>
     <script src="./Scripts/jquery.min.js"></script>
@@ -39,6 +43,8 @@
     <script src="./app.js"></script>
     <script src="./controllers/customerController.js"></script>
     <script src="./services/customerService.js"></script>
+    <script src="./controllers/todoController.js"></script>
+    <script src="./services/todoService.js"></script>
 </body>
 
 </html>
