@@ -19,10 +19,10 @@ app.config(function ($routeProvider) {
                 controller: 'OrdersController',
                 templateUrl: 'views/orders.html'
             })
-        .when('/orders/:customerId',
+        .when('/customers/:customerId',
             {
-                controller: 'CustomerOrdersController',
-                templateUrl: 'views/customerOrders.html'
+                controller: 'CustomerDetailsController',
+                templateUrl: 'views/customerDetails.html'
             })
         .otherwise({ redirectTo: '/customers' });
 });

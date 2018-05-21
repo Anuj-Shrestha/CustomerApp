@@ -19,7 +19,7 @@ app.controller('CustomerController', function ($scope, customerService) {
 
 });
 
-app.controller('CustomerOrdersController', function ($scope, $routeParams, customerService) {
+app.controller('CustomerDetailsController', function ($scope, $routeParams, customerService) {
     $scope.customer = {};
     $scope.ordersTotal = 0.00;
     

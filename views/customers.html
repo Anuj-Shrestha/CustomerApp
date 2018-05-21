@@ -16,7 +16,7 @@
                     <button class="btn close cardClose" data-ng-click="deleteCustomer(customer.id)">&times;</button>
                     <div class="cardHeader">{{customer.firstName + ' ' + customer.lastName}}</div>
                     <div class="cardBody">{{customer.city}}</div>
-                    <a href="#/orders/{{customer.id}}" class="cardBody btn-link">View {{ customer.orders.length }} Orders</a>
+                    <a href="#/customers/{{customer.id}}" class="cardBody btn-link">View {{ customer.orders.length }} Orders</a>
                 </div>
             </div>
             <br />
